@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import CreateUser from './screens/CreateUser';
 import UserDetail from './screens/UserDetail';
 import UsersList from './screens/UsersList';
+import Login from './screens/Login';
 
 
 const stack = createStackNavigator();
@@ -12,17 +13,21 @@ const stack = createStackNavigator();
 function MyStack() {
   return (
     <stack.Navigator>
-
+      <stack.Screen name="Login"
+        component={Login}
+        options={{ title: 'Login' }} />
 
       <stack.Screen name="UsersList"
         component={UsersList}
         options={{ title: 'Lista de usuarios' }} />
+
       <stack.Screen name="CreateUser"
         component={CreateUser}
         options={{ tittle: 'Crear usuario' }} />
       <stack.Screen name="UserDetail"
         component={UserDetail}
         options={{ tittle: 'Detalles del usuario' }} />
+        
     </stack.Navigator>
   )
 }
